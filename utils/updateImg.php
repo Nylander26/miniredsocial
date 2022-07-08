@@ -40,7 +40,7 @@
     
                if (move_uploaded_file($temp, dirname(__FILE__,2)."/imgUsers/$idSession/profile/profile.$typeFile")) {
                         
-                    return print_r(dirname(__FILE__,2)."/imgUsers/$idSession/profile");
+                    return print_r(dirname(__FILE__,2)."/imgUsers/$idSession/profile/profile.$typeFile");
                     
                 }   
 
