@@ -40,25 +40,25 @@
     
                if (move_uploaded_file($temp, dirname(__FILE__,2)."/imgUsers/$idSession/profile/profile.$typeFile")) {
                         
-                    return print_r('Se ha subido correctamente la imagen');
+                    return print_r(dirname(__FILE__,2)."/imgUsers/$idSession/profile");
                     
                 }   
 
             } elseif ($task == "post") {     
 
-                $pathFile = file_exists("../imgUsers/$idSession/posts");
+                $pathFile = file_exists(dirname(__FILE__,2)."/imgUsers/$idSession/posts");
                 
                 
 
                 if (!$pathFile) {
-                    mkdir("../imgUsers/$idSession/posts");   
+                    mkdir(dirname(__FILE__,2)."/imgUsers/$idSession/posts");   
                              
                 } 
 
                 
-               if (move_uploaded_file($temp, "../imgUsers/$idSession/posts/$file")) {                      
+               if (move_uploaded_file($temp, dirname(__FILE__,2)."/imgUsers/$idSession/posts/$file")) {                      
                 
-                return print_r("C:/xampp/htdocs/miniredsocial/imgUsers/$idSession/posts/$file");
+                return print_r(dirname(__FILE__,2)."/imgUsers/$idSession/posts/$file");
                 
             }
 
