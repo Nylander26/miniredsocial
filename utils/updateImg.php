@@ -58,7 +58,7 @@
                 
                if (move_uploaded_file($temp, dirname(__FILE__,2)."/imgUsers/$idSession/posts/$file")) {                      
                 
-                return print_r(dirname(__FILE__,2)."/imgUsers/$idSession/posts/$file");
+                return dirname(__FILE__,2)."/imgUsers/$idSession/posts/$file";
                 
             }
 
@@ -84,10 +84,54 @@
   };
    
   if (isset($_FILES['img'])) {
-    uploadImgUser($_FILES['img'], $id, "register");
+    uploadImgUser($_FILES['img'], $id, "post");
   }
 
+  function getImgProfile($idSession) {
+    
+    $pathFile = file_exists(dirname(__FILE__,2)."/imgUsers/$idSession");
+    $pathFileUser = file_exists(dirname(__FILE__,2)."/imgUsers/$idSession/profile/profile.png");
+
+    if (!$pathFile) {
+        return 'No se encontro ninguna informacion para este usuario';
+    }
+    
+    if (!$pathFileUser) {
+        return 'El usuario no tiene ninguna foto de perfil';
+    }
    
+
+    return dirname(__FILE__,2)."/imgUsers/$idSession/profile/profile.png";
+
+    
+
+  }
+
+  function getImgPosts ($idSession) {
+
+    $pathFilePost = file_exists(dirname(__FILE__,2)."/imgUsers/$idSession/posts");
+    $imgPosts = [];
+    
+    if (!$pathFilePost) {
+        return 'El Usuario no tiene ningun post';
+    }
+
+    $thefolder = dirname(__FILE__,2)."/imgUsers/$idSession/posts";
+
+    if ($handler = opendir($thefolder)) {
+    while (false !== ($file = readdir($handler))) {
+            $dataImg = $file; 
+            //$img = explode("/", $dataImg);
+            if ($dataImg !== "." && $dataImg !== "..") {
+                $imgPosts[] = dirname(__FILE__,2)."/imgUsers/$idSession/posts/$dataImg";
+            }          
+           
+    }
+    closedir($handler);
+    }
+
+    return $imgPosts;
+  }   
 
 ?>
 
