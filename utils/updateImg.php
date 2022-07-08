@@ -25,19 +25,20 @@
 
             if ($task == "register") {
 
-                $pathFile = file_exists("../imgUsers/$idSession");
+                $pathFile = file_exists(dirname(__FILE__,2)."/imgUsers/$idSession");
                 $pathFileProfile = file_exists("../imgUsers/$idSession/profile");
+                
 
                 if (!$pathFile) {
-                    mkdir("../imgUsers/$idSession");    
-                    mkdir("../imgUsers/$idSession/profile");                
+                    mkdir(dirname(__FILE__,2)."/imgUsers/$idSession");    
+                    mkdir(dirname(__FILE__,2)."/imgUsers/$idSession/profile");                
                 } 
 
                 if (!$pathFileProfile && $pathFile) {                    
-                    mkdir("../imgUsers/$idSession/profile");
+                    mkdir(dirname(__FILE__,2)."/imgUsers/$idSession/profile");
                 } 
     
-               if (move_uploaded_file($temp, "../imgUsers/$idSession/profile/profile.$typeFile")) {
+               if (move_uploaded_file($temp, dirname(__FILE__,2)."/imgUsers/$idSession/profile/profile.$typeFile")) {
                         
                     return print_r('Se ha subido correctamente la imagen');
                     
@@ -83,7 +84,7 @@
   };
    
   if (isset($_FILES['img'])) {
-    uploadImgUser($_FILES['img'], $id, "post");
+    uploadImgUser($_FILES['img'], $id, "register");
   }
 
    
