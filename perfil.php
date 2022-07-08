@@ -54,8 +54,34 @@
         $json = json_encode($data);
 
         file_put_contents('data.json', $json);
+
+        require('./utils/updateImg.php');
+        if(isset($_FILES))
+        {
+            $foto = $_FILES['fotoPerfil'];
+        }
+        uploadImgUser($foto, session_id(), 'register');
     }
     session_start();
-    
+    //mostrar los otros usuarios
+    echo "<ul>";
+    for($i=0; $i<count($data); $i++)
+    {
+        if($data[$i]['email'] != $email) //para que no muestre al usuario activo en la lista de los otros usuarios
+        {
+            $idUsuario = $data[$i]['id'];
+            if(is_dir("./imgUsers/$idUsuario/profile"))
+            {
+                $ruta = "./imgUsers/$idUsuario/profile/profile.png"; //ruta en la que estará la img de perfil del usuario $i
+            }
+
+            echo "<li><img src='$ruta'>"; //se imprime la foto de perfil
+            echo "$data[$i]['nombre']"; //se imprime el nombre del usuario
+            echo "</li>";
+        }
+    }
+    echo "</ul>";
+
+
 ?>
 
