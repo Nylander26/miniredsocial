@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&family=Source+Sans+Pro&display=swap');
+
+:root {
+    --color-primario: rgba(205, 21, 21, 0.29);
+    --color-boton-principal: #FFBD59;
+}
+
+
+body {
+    background-color: var(--color-primario);
+}
+
+/*Cajas principales y secundarias*/
+.boxFirst {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.boxInput {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*Personalizacion*/
+
+.imgSZ {
+    width: 350px;
+    /*Imagen(LOGO) principal*/
+}
+
+/*Link de pagina registrate*/
+
+.registerLink {
+    margin-top: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-family: roboto;
+}
+
+/*Modificacion de los inputos de registro*/
+
+input[type="password" i] {
+    width: 350px;
+    height: 35px;
+    border: none;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+input[type="email" i] {
+    width: 350px;
+    height: 35px;
+    border: none;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+button {
+    width: 250px;
+    height: 35px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--color-boton-principal);
+    color: white;
+    font-family: roboto;
+    font-size: 16px;
+}
+
+
+/*Media queries*/
+
+@media screen and (max-width: 1025px) {
+    .boxFirst {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .boxInput {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+       p {
+        display: none;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width:1025px) {
+    .boxFirst {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 450px;
+        height: 450px;
+        background-color: white;
+        border-radius: 15px;
+    }
+
+    .boxInput {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .boxIMG {
+        display: flex;
+        flex-direction: column;
+        align-items: center
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        min-height: 100vh;
+        overflow: hidden;
+    }
+    .botonRegistro {
+        margin-top: 15px;
+        text-align: center;
+        width: 250px;
+        height: 37px;
+        background-color: #5CE1E6;
+        border-radius: 10px;
+        font-size: 16px;
+    }
+
+    form {
+        display: flex;
+        align-items: center;
+    }
+
+    p {
+        display: block;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 28px;
+        font-weight: normal;
+        line-height: 32px;
+        width: 550px;
+        padding: 20px;
+        margin-top: -55px;
+    }
+
+    input[type="password" i] {
+        border: black 2px solid;
+    }
+
+    input[type="email" i] {
+        border: black 2px solid;
+    }
+
+}
