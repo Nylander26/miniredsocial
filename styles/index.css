@@ -2,6 +2,7 @@
 
 :root {
     --color-primario: rgba(205, 21, 21, 0.29);
+    --color-secundario: rgba(237, 234, 234, 0.89);
     --color-boton-principal: #FFBD59;
 }
 
@@ -40,6 +41,16 @@ body {
     font-weight: bold;
     font-family: roboto;
 }
+/*Boton de Registro*/
+.botonRegistro {
+    margin-top: 15px;
+    text-align: center;
+    width: 250px;
+    height: 45px;
+    background-color: #5CE1E6;
+    border-radius: 10px;
+    font-size: 16px;
+}
 
 /*Modificacion de los inputos de registro*/
 
@@ -71,8 +82,104 @@ button {
     color: white;
     font-family: roboto;
     font-size: 16px;
+    cursor: pointer;
 }
 
+.claseX{
+    float: right;
+    width: 8%;
+    height: 8%;
+    border-radius: 50%;
+    text-decoration: none;
+    text-align: center;
+    background-color: var(--color-boton-principal);
+}
+
+.container-MD {
+    width: 350px;
+    height: 350px;
+    border-radius: 25px;
+    border: none;
+    background-color: var(--color-secundario);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/*Animacion de Modal y Edicion*/
+.registerLinkMD {
+    margin-top: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-family: roboto;
+}
+
+.iconoMD {
+    border-radius: 50%;
+    background: var(--color-primario);
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    animation-duration: 5s;
+    animation-name: twinkle;
+    animation-iteration-count: infinite;
+}
+
+@keyframes twinkle {
+    20% {
+        transform: scale(0.5);
+        opacity: 0.5;
+    }
+}
+
+
+.animacionLogo {
+    -webkit-animation: animacionLogo 15s linear both;
+    animation: animacionLogo 15s linear both;
+    animation-iteration-count: infinite;
+}
+/*Animacion logo-1*/
+@-webkit-keyframes animacionLogo {
+    0% {
+        -webkit-transform: rotate3d(1, 1, 0, 0deg);
+        transform: rotate3d(1, 1, 0, 0deg);
+    }
+
+    50% {
+        -webkit-transform: rotate3d(1, 1, 0, -180deg);
+        transform: rotate3d(1, 1, 0, -180deg);
+    }
+
+    100% {
+        -webkit-transform: rotate3d(1, 1, 0, -360deg);
+        transform: rotate3d(1, 1, 0, -360deg);
+    }
+}
+
+@keyframes animacionLogo {
+    0% {
+        -webkit-transform: rotate3d(1, 1, 0, 0deg);
+        transform: rotate3d(1, 1, 0, 0deg);
+    }
+
+    50% {
+        -webkit-transform: rotate3d(1, 1, 0, -180deg);
+        transform: rotate3d(1, 1, 0, -180deg);
+    }
+
+    100% {
+        -webkit-transform: rotate3d(1, 1, 0, -360deg);
+        transform: rotate3d(1, 1, 0, -360deg);
+    }
+}
 
 /*Media queries*/
 
@@ -89,7 +196,7 @@ button {
         align-items: center;
     }
 
-       p {
+    .Titulo {
         display: none;
     }
 
@@ -130,11 +237,12 @@ button {
         min-height: 100vh;
         overflow: hidden;
     }
+
     .botonRegistro {
         margin-top: 15px;
         text-align: center;
         width: 250px;
-        height: 37px;
+        height: 45px;
         background-color: #5CE1E6;
         border-radius: 10px;
         font-size: 16px;
@@ -145,7 +253,7 @@ button {
         align-items: center;
     }
 
-    p {
+    .Titulo {
         display: block;
         font-family: 'Source Sans Pro', sans-serif;
         font-size: 28px;
