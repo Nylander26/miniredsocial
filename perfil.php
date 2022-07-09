@@ -26,9 +26,8 @@
                             'fechaNac' => $fechaNac,
                             'password' => $password];
 
-    $data[] = $miArray;
-    print_r(stripslashes(json_encode($data)));
-    $json = json_encode($data);
+    $data[] = $miArray;    
+    $json = stripslashes(json_encode($data));
 
     file_put_contents('data.json', $json);
     echo "<script src='prueba.js'></script>";
