@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/register.css">
+    <title>Red Social</title>
+    <script src='prueba.js'></script>
+</head>
+    <body>
+        <form method='POST' enctype='multipart/form-data' action='perfil.php'>
+            <div class="boxIMG">
+                <img class="imgSZ" src="../img/logo.png">
+                <div>
+                    <p>Red Social te ayuda a comunicarte y compartir con las personas que forman parte de tu vida.</p>
+                </div>
+            </div>
+            <div class="boxFirst">
+                <div class="boxInput">
+                    <input type="text" name='nombre' placeholder='Nombre'>
+                    <input type='text' name='username' placeholder='Nombre de usuario'>
+                    <input type='email' name='email' placeholder='Email'>
+                    <input type='date' name='fechaNac' placeholder='Fecha de nacimiento'>
+                    <input type='password' name='password' placeholder='Contraseña'>
+                    <input type='file' name='fotoPerfil' accept="image/*">
+                    <button type='submit'>Iniciar sesión</button>
+                    <div class="botonRegistro"><a href="pages/inicioSesion.html" class="registerLink">¿Ya estas registrado? <br> Inicia Sesion</a></div>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>

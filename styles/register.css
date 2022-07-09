@@ -23,6 +23,7 @@ body {
     align-items: center;
 }
 
+
 /*Personalizacion*/
 
 .imgSZ {
@@ -30,21 +31,19 @@ body {
     /*Imagen(LOGO) principal*/
 }
 
-/*Link de pagina registrate*/
-
-.registerLink {
-    margin-top: 20px;
-    text-align: center;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    font-family: roboto;
-}
 
 /*Modificacion de los inputos de registro*/
+input[type="text" i] {
+    width: 250px;
+    height: 35px;
+    border: none;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+}
 
 input[type="password" i] {
-    width: 350px;
+    width: 250px;
     height: 35px;
     border: none;
     border-radius: 15px;
@@ -53,7 +52,7 @@ input[type="password" i] {
 }
 
 input[type="email" i] {
-    width: 350px;
+    width: 250px;
     height: 35px;
     border: none;
     border-radius: 15px;
@@ -64,13 +63,50 @@ input[type="email" i] {
 
 button {
     width: 250px;
-    height: 35px;
+    height: 37px;
     border-radius: 10px;
     border: none;
     background-color: var(--color-boton-principal);
     color: white;
-    font-family: roboto;
+    font-family: Roboto;
     font-size: 16px;
+    cursor: pointer;
+}
+
+input[type="date" i] {
+    font-family: lobster;
+    width: 253px;
+    height: 35px;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    margin-bottom: 25px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: transparent;
+    background: 0 0;
+    margin: 0;
+    opacity: 0;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+input[type="file" i] {
+    margin-bottom: 20px;
+}
+
+.registerLink {
+    margin-top: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-family: Roboto;
 }
 
 
@@ -89,7 +125,11 @@ button {
         align-items: center;
     }
 
-       p {
+    input[type="date" i] {
+        border: none;
+    }
+
+    p {
         display: none;
     }
 
@@ -107,7 +147,7 @@ button {
         flex-direction: column;
         align-items: center;
         width: 450px;
-        height: 450px;
+        height: 550px;
         background-color: white;
         border-radius: 15px;
     }
@@ -124,12 +164,6 @@ button {
         align-items: center
     }
 
-    body {
-        display: flex;
-        justify-content: center;
-        min-height: 100vh;
-        overflow: hidden;
-    }
     .botonRegistro {
         margin-top: 15px;
         text-align: center;
@@ -140,9 +174,17 @@ button {
         font-size: 16px;
     }
 
+    body {
+        display: flex;
+        justify-content: center;
+        min-height: 100vh;
+        overflow: hidden;
+    }
+
     form {
         display: flex;
         align-items: center;
+        gap: 30px;
     }
 
     p {
@@ -152,8 +194,11 @@ button {
         font-weight: normal;
         line-height: 32px;
         width: 550px;
-        padding: 20px;
-        margin-top: -55px;
+    }
+
+    input[type="text" i] {
+        border: black 2px solid;
+
     }
 
     input[type="password" i] {
@@ -164,4 +209,7 @@ button {
         border: black 2px solid;
     }
 
+    input[type="date" i] {
+        border: black 2px solid;
+    }
 }
