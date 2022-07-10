@@ -25,19 +25,16 @@ const login = async (e) =>{
 
 const existUsers = (data, email, password) =>{
 
-    let message;
-
-    data.map(info => {
-        if (email == info.email && password == info.password) {
-            message = true
-        }else{
-           message= false
+    for (let i = 0; i < data.length; i++) {
+        
+        if (data[i].email == email && data[i].password == password) {
+            return true
         }
-       
-    } )
 
-    return message
+        } 
+
+        return false
+    
+    }
 
 
-
-}
