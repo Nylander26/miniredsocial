@@ -1,40 +1,33 @@
-
-const login = async (e) =>{
-  
+async function login(e){
     e.preventDefault()
 
-    let email = document.getElementById("email").value
-    let password = document.getElementById("password").value
+    var email = document.getElementById("email").value;
+    var contraseña = document.getElementById("password").value;
+    const jsondata = await fetch("../Proyecto-Mini-Red-Social-/json/data.json")
+    const data = await jsondata.json()
 
-
-    const jsondata = await fetch("./json/data.json");
-    const data = await jsondata.json();
     
-    const resUser = existUsers(data, email, password)
+    const user = userexists(data, email, contraseña);
 
-/*Verificacion si el usuario existe para que aparezca el modal*/
-    if(resUser){
-        let modal = document.getElementById("modal")
-        modal.close()
-    }else{
-        let modal = document.getElementById("modal")
-        modal.showModal()
+    if(user)
+    {
+        var direccion = "../Proyecto-Mini-Red-Social-/pages/perfilpropio.php?email=" + email;
+        window.location.href = direccion;
     }
+    else
+    {
+        var errorSpan = document.getElementById("formError");
+        errorSpan.innerHTML = "<p class='error'>Error en contraseña o nombre de usuario. Por favor revisa y prueba nuevamente.</p>"; 
+    }
+    
 }
 
-
-const existUsers = (data, email, password) =>{
-
-    for (let i = 0; i < data.length; i++) {
-        
-        if (data[i].email == email && data[i].password == password) {
-            return true
-        }
-
-        } 
-
-        return false
-    
+function userexists(data, email, contraseña){
+    for (let i = 0; i < data.length; i++){
+        if (data[i].email == email && data[i].password == contraseña){
+            return true;
+        }    
     }
-
-
+    return false
+}
+ 
