@@ -6,6 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo userValidation($data);
 }
 
+
 function userValidation($infoUser){
     $name = $infoUser['name'];
     $username = $infoUser['username'];

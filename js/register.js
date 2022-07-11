@@ -1,5 +1,12 @@
+const form = document.querySelector('#form');
+const image = document.querySelector("#image")
+
+
+
 const register = async (e) => {
     e.preventDefault()
+
+
     let name = document.getElementById("name").value 
     let username = document.getElementById("username").value      
     let email = document.getElementById("email").value   
@@ -23,4 +30,18 @@ const register = async (e) => {
     console.log(resApi);
     
 }
-    //console.log(name, lastName, userName, email, password);
+
+
+image.addEventListener ("change", async () => {
+    const dataForm = new FormData(form)
+    
+    const getApi = await fetch('../php/uploadImg.php',{
+        method : 'POST',
+        body: dataForm
+    })
+
+    const resApi = await getApi.json()
+
+    console.log(resApi);
+
+   })

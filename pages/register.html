@@ -11,7 +11,7 @@
     <title>Red Social</title>
 </head>
 <body>
-    <form method='POST' enctype='multipart/form-data'>
+    <form method='POST' id="form" enctype='multipart/form-data'>
         <div class="boxIMG">
             <img class="imgSZ animacionLogo" src="../img/logo.png">
             <div>
@@ -19,10 +19,11 @@
             </div>
         </div>
         <div class="boxFirst">
-            <div class="boxInput">
-                <input id="costumFile" type='file' class="formFile" name='fotoPerfil' accept="image/*">
+            <div class="boxInput">            
+                <input type="file" name="profile" id="image">
+                <!--<input onclick="uploadImg()" id="costumFile" type="file" class="formFile" name="imgProfile" >-->
                 <label for="costumFile" class="formFile"><i class="fa-solid fa-camera fa-4x"></i></label>
-                <input type="text" id="name" name='name' placeholder='Nombre completo'>
+                <input type="text" id="name" name ="name" placeholder='Nombre completo'>
                 <input type='text' id="username" name='username' placeholder='Nombre de usuario'>
                 <input type='email' id="email" name='email' placeholder='Email'>
                 <input type='date' id="birthday" name='fechaNac' placeholder='Fecha de nacimiento'>
