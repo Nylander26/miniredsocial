@@ -106,6 +106,8 @@
     
 
   }
+$body = file_get_contents('php://input');
+$data = json_decode($body, true);
 
   function getImgPosts ($idSession) {
 
@@ -115,7 +117,7 @@
     $imgPosts = [];
     
     if (!$pathFilePost) {
-        return 'El Usuario no tiene ningun post';
+        return json_encode('El Usuario no tiene ningun post');
     }
 
     $thefolder = dirname(__FILE__,2)."/imgUsers/$idSession/posts";
@@ -132,49 +134,32 @@
     closedir($handler);
     }
 
-    $data = '';
+    
 
-    if (file_exists(dirname(__FILE__,2)."/json/postsUsers/$idSession.json")) {
-        $contenidoJson = file_get_contents(dirname(__FILE__,2)."/json/postsUsers/$idSession.json");
-        $contenidoJson = json_decode($contenidoJson, true);
-        $data = $contenidoJson;
-    }
+    // if (file_exists(dirname(__FILE__,2)."/json/postsUsers/$idSession.json")) {
+    //     $contenidoJson = file_get_contents(dirname(__FILE__,2)."/json/postsUsers/$idSession.json");
+    //     $contenidoJson = json_decode($contenidoJson, true);
+    //     $data = $contenidoJson;
+    // }
 
     
-    fopen(dirname(__FILE__,2)."/json/postsUsers/$idSession.json","a"); 
+    // fopen(dirname(__FILE__,2)."/json/postsUsers/$idSession.json","a"); 
     
     $data = $imgPosts;
-    print_r(stripslashes(json_encode($data)));
     $json = stripslashes(json_encode($data));
-
-    file_put_contents(dirname(__FILE__,2)."/json/postsUsers/$idSession.json", $json);
+    
+    // file_put_contents(dirname(__FILE__,2)."/json/postsUsers/$idSession.json", $json);
     /*if(is_file('data.json'))
     {
         $contenidoJson = file_get_contents('data.json');
         $contenidoJson = json_decode($contenidoJson, true);
         $data = $contenidoJson;
     }*/
-    print_r(dirname(__FILE__,2)."/json/postsUsers/$idSession.json". PHP_EOL);
-    return $imgPosts;
+    // print_r(dirname(__FILE__,2)."/json/postsUsers/$idSession.json". PHP_EOL);
+    return($json);
   }   
 
-getImgPosts($id);
-
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    echo (getImgPosts($data["id"]));
+}
 ?>
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form method="POST" enctype="multipart/form-data">
-        <input name="img" type="file">
-        <button name="dataImg" >Enviar</button>
-    </form>
-</body>
-</html>
