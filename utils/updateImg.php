@@ -111,7 +111,7 @@ $data = json_decode($body, true);
 
   function getImgPosts ($idSession) {
 
-    $urlStr = str_replace('\\', '/', dirname(__FILE__,2));
+    // $urlStr = str_replace('\\', '/', dirname(__FILE__,2));
 
     $pathFilePost = file_exists(dirname(__FILE__,2)."/imgUsers/$idSession/posts");
     $imgPosts = [];
@@ -127,7 +127,7 @@ $data = json_decode($body, true);
             $dataImg = $file; 
             //$img = explode("/", $dataImg);
             if ($dataImg !== "." && $dataImg !== "..") {
-                $imgPosts[] = (object) [ 'url' => $urlStr."/imgUsers/$idSession/posts/$dataImg"];
+                $imgPosts[] = (object) [ 'url' => "../imgUsers/$idSession/posts/$dataImg"];
             }          
            
     }
