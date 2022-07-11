@@ -58,16 +58,18 @@
     
 
   }
+$body = file_get_contents('php://input');
+$data = json_decode($body, true);
 
   function getImgPosts ($idSession) {
 
-    $urlStr = str_replace('\\', '/', dirname(__FILE__,2));
+    // $urlStr = str_replace('\\', '/', dirname(__FILE__,2));
 
     $pathFilePost = file_exists(dirname(__FILE__,2)."/imgUsers/$idSession/posts");
     $imgPosts = [];
     
     if (!$pathFilePost) {
-        return 'El Usuario no tiene ningun post';
+        return json_encode('El Usuario no tiene ningun post');
     }
 
     $thefolder = dirname(__FILE__,2)."/imgUsers/$idSession/posts";
@@ -77,38 +79,36 @@
             $dataImg = $file; 
             //$img = explode("/", $dataImg);
             if ($dataImg !== "." && $dataImg !== "..") {
-                $imgPosts[] = (object) [ 'url' => $urlStr."/imgUsers/$idSession/posts/$dataImg"];
+                $imgPosts[] = (object) [ 'url' => "../imgUsers/$idSession/posts/$dataImg"];
             }          
            
     }
     closedir($handler);
     }
 
-    $data = '';
+    
 
-    if (file_exists(dirname(__FILE__,2)."/json/postsUsers/$idSession.json")) {
-        $contenidoJson = file_get_contents(dirname(__FILE__,2)."/json/postsUsers/$idSession.json");
-        $contenidoJson = json_decode($contenidoJson, true);
-        $data = $contenidoJson;
-    }
+    // if (file_exists(dirname(__FILE__,2)."/json/postsUsers/$idSession.json")) {
+    //     $contenidoJson = file_get_contents(dirname(__FILE__,2)."/json/postsUsers/$idSession.json");
+    //     $contenidoJson = json_decode($contenidoJson, true);
+    //     $data = $contenidoJson;
+    // }
 
     
-    fopen(dirname(__FILE__,2)."/json/postsUsers/$idSession.json","a"); 
+    // fopen(dirname(__FILE__,2)."/json/postsUsers/$idSession.json","a"); 
     
     $data = $imgPosts;
-    print_r(stripslashes(json_encode($data)));
     $json = stripslashes(json_encode($data));
-
-    file_put_contents(dirname(__FILE__,2)."/json/postsUsers/$idSession.json", $json);
+    
+    // file_put_contents(dirname(__FILE__,2)."/json/postsUsers/$idSession.json", $json);
     /*if(is_file('data.json'))
     {
         $contenidoJson = file_get_contents('data.json');
         $contenidoJson = json_decode($contenidoJson, true);
         $data = $contenidoJson;
     }*/
-    print_r(dirname(__FILE__,2)."/json/postsUsers/$idSession.json". PHP_EOL);
-    return $imgPosts;
+    // print_r(dirname(__FILE__,2)."/json/postsUsers/$idSession.json". PHP_EOL);
+    return($json);
   }   
-
 
 ?>
