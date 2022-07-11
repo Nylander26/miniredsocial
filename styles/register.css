@@ -6,6 +6,12 @@
     --color-boton-principal: #FFBD59;
 }
 
+.preview img {
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
 
 body {
     background-color: var(--color-primario);
@@ -119,7 +125,7 @@ input[type="file" i] {
     border-radius: 10px;
     font-size: 16px;
 }
-#costumFile{
+#image{
     display: none;
 }
 .formFile {
@@ -221,7 +227,7 @@ input[type="file" i] {
         flex-direction: column;
         align-items: center;
         width: 450px;
-        height: 650px;
+        height: 685px;
         background-color: white;
         border-radius: 15px;
     }
