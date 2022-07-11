@@ -53,18 +53,25 @@ document.getElementById('image').onchange = function (e) {
     if (lector) {
         lector.readAsDataURL(e.target.files[0]);
         lector.onload = function () {
-            let preview = document.getElementById('previewDIV');
-            let divINPUT = document.getElementById('cajaFile')
+            let cajaPadre = document.getElementById('padrePreview')
+            let preview = document.createElement('div')
+            let divINPUT = document.getElementById('cajaFile');
+
             divINPUT.style.display = "none";
+            preview.classList.add('preview');
+            preview.setAttribute("id", "previewDIV");
+            cajaPadre.appendChild(preview);
+
             imagen = document.createElement('img');
             imagen.src = lector.result;
-            preview.append(imagen);
+            preview.appendChild(imagen);
+
+            document.getElementById('padrePreview').onclick = function (e) {
+                this.firstChild.remove();
+                let divINPUT = document.getElementById('cajaFile')
+                divINPUT.style.display = "flex";
+            };
         }
     }
 }
 
-document.getElementById('previewDIV').onclick = function (e){
-    this.remove();
-    let divINPUT = document.getElementById('cajaFile')
-    divINPUT.style.display = "flex";
-};
