@@ -71,6 +71,11 @@ input[type="file" i]{
     overflow-y:scroll;
 }
 
+#boxUsers::-webkit-scrollbar {
+    -webkit-appearance: none;
+    display: none;
+}
+
 .users{
     display: flex;
     padding: 2%;
@@ -232,6 +237,11 @@ figcaption{
         overflow-y:scroll;
     }
     
+    #boxUsers::-webkit-scrollbar {
+        -webkit-appearance: none;
+        display: none;
+    }
+
     .users{
         display: flex;
         padding: 2%;
