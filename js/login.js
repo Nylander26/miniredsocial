@@ -3,15 +3,23 @@ async function login(e){
 
     var email = document.getElementById("email").value;
     var contraseña = document.getElementById("password").value;
-    const jsondata = await fetch("../Proyecto-Mini-Red-Social-/json/data.json")
+    const jsondata = await fetch("../miniredsocial/json/data.json")
     const data = await jsondata.json()
 
     
     const user = userexists(data, email, contraseña);
+    
+    if(user == false){
+        let modal = document.getElementById('modal')
+        modal.showModal();
+        setTimeout(()=>{
+            modal.close();
+              },5000);
+    }
 
     if(user)
     {
-        var direccion = "../Proyecto-Mini-Red-Social-/pages/perfilpropio.php?email=" + email;
+        var direccion = "../miniredsocial/pages/perfilpropio.php?email=" + email;
         window.location.href = direccion;
     }
     else
@@ -30,4 +38,6 @@ function userexists(data, email, contraseña){
     }
     return false
 }
- 
+
+
+
