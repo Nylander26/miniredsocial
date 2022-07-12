@@ -1,0 +1,121 @@
+:root {
+    --color-primario: rgba(205, 21, 21, 0.29);
+    --color-boton-principal: #e38c09;
+}
+
+body {
+    background-color: var(--color-primario);
+    margin: 0;
+}
+
+.boxIMG { 
+
+    width: 100%;
+    height: 150px;
+    background-color: white;
+}
+
+/*.boxFirst {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: space-between;
+    justify-content: flex-start;
+    padding: 10%;
+}*/
+
+.boxInput {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.boxProfile {
+    
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2%;
+    margin-top: 2%;
+
+}
+
+/*Imágenes*/
+
+.logo {
+    width: 150px;
+    
+}
+
+.profilePic {
+
+    width: 150px;
+    border-radius: 50%;
+    border: white solid 2px;
+}
+
+/*Inputs y botones*/ 
+input[type="text" i] {
+    width: 250px;
+    height: 35px;
+    border: none;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: lobster;
+}
+
+input[type="file" i] {
+    width: 250px;
+    height: 35px;
+    border: none;
+    text-align: center;
+}
+
+textarea {
+    font-family: lobster;
+    width: 250px;
+    height: 80px;
+    border: none;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: normal;
+}
+
+button {
+    width: 150px;
+    height: 35px;
+    border-radius: 15px;
+    border: none;
+    background-color: var(--color-boton-principal);
+    color: white;
+}
+
+/*Media queries*/
+
+@media screen and (max-width: 1025px) {
+    
+
+    .boxInput {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    p {
+        display: none;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
