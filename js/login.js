@@ -19,7 +19,7 @@ async function login(e){
 
     if(user)
     {
-        var direccion = "../miniredsocial/pages/perfilpropio.php?email=" + email;
+        var direccion = "../miniredsocial/pages/usuario.html";
         window.location.href = direccion;
     }
     else

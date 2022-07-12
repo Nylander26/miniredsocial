@@ -1,0 +1,252 @@
+:root {
+    --color-primario: rgba(205, 21, 21, 0.29);
+    --color-boton-principal: #e38c09;
+}
+
+
+.img-gallery{
+    width: 80%;
+    margin: 50px auto 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+}
+
+.img-gallery img{
+    width: 100%;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.img-gallery img:hover{
+    transform: scale(1.2);
+}
+
+.ful-img{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+}
+
+.ful-img span{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.ful-img img{
+    width: 90%;
+    max-width: 60%;
+}
+.galeriaUser{
+    
+}
+
+@media screen and (max-width: 600px){
+    h1{
+        text-decoration: underline;
+    }
+    h1::before{
+        display: none;
+    }
+    h1 span{
+        padding: 0;
+    }
+
+
+body {
+    background-color: var(--color-primario);
+    margin: 0px;
+}
+
+.boxIMG { 
+
+    width: 100%;
+    height: 150px;
+    background-color: white;
+}
+
+.boxInput {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: wheat;
+    height: 75vh;
+    width: 100%;
+}
+
+.boxProfile {
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2%;
+    margin-top: 2%;
+    margin-left: 1%;
+    margin-right: 1%;
+
+}
+
+#costumFile{
+    display: none;
+}
+
+.formFile {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    cursor: pointer;
+}
+
+/*Imágenes*/
+
+.logo {
+    width: 130px;
+    
+}
+
+.camLogo {
+    width: 25px;
+}
+
+.profilePic {
+    width: 90px;
+    margin: 1% 1% 1% 1%;
+    border-radius: 50%;
+}
+
+.usersPics {
+    width: 85px;
+    border-radius: 50%;
+}
+
+.feetPhotos {
+    width: 150px;   
+    margin: 2% 2% 2% 2%;
+}
+
+/*Inputs y botones*/ 
+input[type="text" i] {
+    width: 80%;
+    height: 25px;
+    border: solid 1px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+}
+
+/*Media queries*/
+
+@media screen and (max-width: 1025px) {    
+
+    .boxInput {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        height: auto;
+    }
+
+    .boxIMG {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    }
+
+    .feetPhotos {
+        width: 80%;   
+        
+    }
+
+    .boxCenter {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 60%;
+    }
+
+    p {
+        display: none;
+    }  
+
+    body {
+        
+        max-height: 100%;
+        
+    }
+    
+}
+
+@media screen and (min-width:1025px) {  
+
+    .boxInput {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        align-content: flex-start;
+        flex-wrap: wrap;
+        height: 100vh;
+    }
+
+    
+    .boxIMG {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .boxProfile {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2%;
+        margin-top: 2%;
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+
+    .boxCenter {
+        width: 80%;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+        align-content: flex-end;
+    }
+
+    input[type="text" i] {
+        border: black 2px solid;
+        
+    }
+
+    .boxMainProfile {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .feetPhotos {
+        width: 20%;   
+        
+    }
+}

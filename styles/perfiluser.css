@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Roboto:ital,wght@1,700&family=Source+Sans+Pro&display=swap');
+
+body {
+    background-color: rgba(205, 21, 21, 0.29);
+    margin: 0;
+}
+
+/*Barra superior*/
+.barraSuperior {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+    background-color: white;
+    padding: 10px;
+}
+
+.logo {
+    width: 140px;
+    margin-left: -30px;
+}
+
+.logoCam {
+    width: 46px;
+}
+
+.profile {
+    width: 90px;
+    border-radius: 50%;
+}
+
+/*Barra usuario*/
+
+.usuarioBarra {
+    display: flex;
+    justify-content: space-around;
+    overflow-y: auto;
+    background-color: white;
+    padding: 10px;
+}
+
+.usuario {
+    width: 70px;
+    border-radius: 50%;
+}
+
+figcaption {
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+}
+
+/*Descripcion Usuario*/
+.usuarioDescripcion {
+    height: auto;
+    min-height: 120px;
+    background-color: white;
+    margin-top: 50px;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.textoDescripcion {
+    width: 180px;
+    margin: 5px;
+    font-family: 'Lato', sans-serif;
+}
+
+
+/*Caja Galeria*/
+
+.galeriaGrid {
+    width: auto;
+    grid-template-columns: repeat(3, 100px);
+    display: grid;
+    justify-content: space-evenly;
+    background-color: white;
+    justify-items: center;
+    padding: 10px;
+    grid-row-gap: 10px
+
+}
+
+.imgSize {
+    width: 23vw;
+}
+
+@media screen and (max-width: 1000px) {
+    .usuarioBarra2 {
+        display: none;
+    }
+
+    .botonUsuario {
+        margin-top: 15px;
+        text-align: center;
+        width: 92px;
+        height: 40px;
+        background-color: #e65cb33b;
+        border-radius: 10px;
+        font-size: 16px;
+        border: none;
+    }
+}
+
+@media screen and (min-width: 1001px) {
+    .usuarioBarra {
+        display: none;
+    }
+
+    .usuarioBarra2 {
+        display: flex;
+        flex-direction: column;
+        min-height: 28vw;
+        background-color: white;
+        height: auto;
+        /* width: -webkit-fill-available; */
+        width: 10vw;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .orden-lateral {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .galeriaGrid {
+        width: -webkit-fill-available;
+        grid-row-gap: 10px
+    }
+
+    .botonUsuario {
+        margin-top: 15px;
+        text-align: center;
+        width: 250px;
+        height: 45px;
+        background-color: #e65cb33b;
+        border-radius: 10px;
+        font-size: 16px;
+        border: none;
+    }
+
+}
