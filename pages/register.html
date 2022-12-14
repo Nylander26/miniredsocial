@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/register.css">
+    <script src="https://kit.fontawesome.com/ba10ce0731.js" crossorigin="anonymous"></script>
+    <title>Red Social</title>
+</head>
+
+<body>
+    <form method='POST' id="form" enctype='multipart/form-data'>
+        <div class="boxIMG">
+            <img class="imgSZ animacionLogo" src="../img/logo.png">
+            <div>
+                <p>Red Social te ayuda a comunicarte y compartir con las personas que forman parte de tu vida.</p>
+            </div>
+        </div>
+        <div class="boxFirst">
+            <div class="boxInput">
+                <div id="padrePreview"></div>
+                <input type="file" name="profile" id="image" class="formFile">
+                <label for="image" id="cajaFile" class="formFile"><i class="fa-solid fa-camera fa-4x"></i></label>
+                <input type="text" id="name" name="name" placeholder='Nombre completo'>
+                <input type='text' id="username" name='username' placeholder='Nombre de usuario'>
+                <input type='email' id="email" name='email' placeholder='Email'>
+                <input type='date' id="birthday" name='fechaNac' placeholder='Fecha de nacimiento'>
+                <input type='password' id="password" name='password' placeholder='Contraseña'>
+                <input type='password' id="passCheck" name='password' placeholder='Contraseña'>
+                <button onclick="register(event)">Crear Cuenta</button>
+                <div class="botonRegistro"><a href="../index.html" class="registerLink">¿Ya estas registrado? <br>
+                        Inicia Sesion</a></div>
+            </div>
+        </div>
+    </form>
+    <script src='../js/register.js'></script>
+</body>
+
+</html>

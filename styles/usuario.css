@@ -1,0 +1,333 @@
+:root {
+    --color-primario: rgba(205, 21, 21, 0.29);
+    --color-boton-principal: #e38c09;
+}
+
+body {
+    background-color: var(--color-primario);
+    margin: 0;
+}
+
+.boxNav { 
+
+    width: 100%;
+    height: 150px;
+    background-color: white;
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.boxLogo{ 
+
+    display: flex;
+}
+
+.boxProfile{ 
+
+    padding: 2%;
+    justify-content: center;
+    text-align: center; 
+}
+
+.boxUpload{ 
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: stretch;
+    justify-content: space-evenly;
+    align-items: center; 
+
+}
+
+input[type="file" i]{
+
+    display: flex;
+    align-items: center;
+}
+
+.galleryPhotos{ 
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+.gallery { 
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#boxUsers{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    background-color: white;
+    padding: 1%;
+    margin-bottom: 2%;
+    overflow-y:scroll;
+}
+
+#boxUsers::-webkit-scrollbar {
+    -webkit-appearance: none;
+    display: none;
+}
+
+.users{
+    display: flex;
+    padding: 2%;
+}
+
+.boxInfo{
+
+    background-color: white;
+    display: flex;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+/*Texto*/
+
+h3{
+    font-family: 'Source Sans Pro'; 
+    font-size: 130%;
+    font-weight: bold;
+}
+
+p{
+    font-family: 'Source Sans Pro'; 
+    font-size: 100%;
+    margin-block:unset;
+    margin-bottom: 2%;  
+}
+
+.infoText{
+
+    display:flex; 
+    padding: 2%;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+/*Imágenes*/
+
+.logo {
+    width: 150px;
+    
+}
+
+.profilePic {
+
+    width: 80px;
+    border-radius: 50%;
+    border: #61e1e6 solid 2px;
+}
+
+.profilePicUser {
+    width: 150px;
+    border-radius: 50%;
+    border: #61e1e6 solid 2px;
+
+} 
+
+.infoPhoto{ 
+
+    padding: 2%;
+    display: flex;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+
+
+figcaption{
+    font-family: 'Source Sans Pro';
+
+}
+
+.photo{ 
+    display: flex;
+    width: 25%;
+    padding: 2%;
+    margin-top: 10px;
+}
+
+/*Botones*/
+.buttonCamera{ 
+
+    background-color: white;
+    border: none;
+    width: 30px;
+}
+
+.button { 
+    width: 30px;
+    
+}
+
+/*Media queries*/
+@media screen and (max-width: 1025px){
+
+    .boxNav { 
+
+        width: 100%;
+        height: 100px;
+        background-color: white;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    .boxLogo{ 
+    
+        display: flex;
+    }
+    
+    .boxProfile{ 
+    
+        padding: 2%;
+        justify-content: center;
+        text-align: center; 
+        display: flex; 
+    }
+    
+    .boxUpload{ 
+    
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: stretch;
+        justify-content: space-evenly;
+        align-items: center; 
+    
+    }
+    
+    input[type="file" i]{
+    
+        display: flex;
+        align-items: center;
+    }
+    
+    .galleryPhotos{ 
+        margin-right: 5%;
+        margin-left: 5%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .gallery { 
+        background-color: white;
+        
+    }
+    
+    #boxUsers{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        background-color: #f0bbbb;
+        justify-content: space-between;
+        padding: 1%;
+        margin-bottom: 2%;
+        overflow-y:scroll;
+    }
+    
+    #boxUsers::-webkit-scrollbar {
+        -webkit-appearance: none;
+        display: none;
+    }
+
+    .users{
+        display: flex;
+        padding: 2%;
+    }
+    
+    .boxInfo{
+    
+        background-color: white;
+        display: flex;
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+    
+    .infoText{
+    
+        display:flex; 
+        padding: 2%;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+    }
+
+    h3{
+        font-family: 'Source Sans Pro'; 
+        font-size: 100%;
+        font-weight: bold;
+    }
+    
+    p{
+        font-family: 'Source Sans Pro'; 
+        font-size: 70%;
+        margin-block:unset;
+        margin-bottom: 2%; 
+    }
+    
+    /*Imágenes*/
+    
+    .logo {
+        width: 100px;
+        
+    }
+    
+    .profilePic {
+    
+        width: 60px;
+        border-radius: 50%;
+        border:white solid 2px;
+        margin-top: 2%;
+    }
+    
+    .profilePicUser {
+        width: 100px;
+        border-radius: 50%;
+        border: #61e1e6 solid 2px;
+    
+    } 
+    
+    .infoPhoto{ 
+    
+        padding: 2%;
+        display: flex;
+        margin-left: 5%;
+        margin-top: 5%;
+    }
+    
+    .photo{ 
+        display: flex;
+        width: 80%;
+        padding: 2%;
+        margin-top: 10px;
+    }
+
+    figcaption {
+
+        display: none;
+    }
+    
+    /*Botones*/
+    .buttonCamera{ 
+    
+        background-color: white;
+        border: none;
+        width: 30px;
+        display: flex;
+    }
+    
+        
+}
+

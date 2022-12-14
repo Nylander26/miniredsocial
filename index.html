@@ -1,34 +1,41 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/index.css">
-    <title>Red Social</title>
-    <script src='prueba.js'></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../miniredsocial/styles/index.css">
+    <script src="https://kit.fontawesome.com/ba10ce0731.js" crossorigin="anonymous"></script>
+	<title>Inicio de Sesion</title>
 </head>
-    <body>
-        <form method='POST' enctype='multipart/form-data' action='perfil.php'>
-            <div class="boxIMG">
-                <img class="imgSZ" src="img/logo.png">
-                <div>
-                    <p>Red Social te ayuda a comunicarte y compartir con las personas que forman parte de tu vida.</p>
-                </div>
+<body>
+    <form action="php/perfilNew.php" method="POST">
+        <div class="boxIMG">
+            <img class="imgSZ animacionLogo" src="../miniredsocial/img/logo.png">
+            <div>
+                <p class="Titulo">Red Social te ayuda a comunicarte y compartir con las personas que forman parte de tu vida.</p>
             </div>
-            <div class="boxFirst">
-                <div class="boxInput">
-                    <input type="text" name='nombre' placeholder='Nombre'>
-                    <input type='text' name='username' placeholder='Nombre de usuario'>
-                    <input type='email' name='email' placeholder='Email'>
-                    <input type='date' name='fechaNac' placeholder='Fecha de nacimiento'>
-                    <input type='password' name='password' placeholder='Contraseña'>
-                    <input type='file' name='fotoPerfil' accept="image/*">
-                    <button type='submit'>Iniciar sesión</button>
-                    <div class="botonRegistro"><a href="pages/inicioSesion.html" class="registerLink">¿Ya estas registrado? <br> Inicia Sesion</a></div>
-                </div>
+        </div>
+
+        <div class="boxFirst">
+            <div class="boxInput">
+                <input name="email" type="email" placeholder="Email" id="email">                              
+                <input name="password" type="password" placeholder="Contraseña" id="password">             
+                
+                <button type="button"  onclick="login(event)">Iniciar sesión</button>
             </div>
-        </form>
-    </body>
+            <div class="botonRegistro"><a href="../miniredsocial/pages/register.html" class="registerLink" >¿No estás registrado? <br> Regístrate </a></div>
+        </div>
+    </form>
+
+    <dialog id="modal" class="container-MD">
+        <a class="claseX" href="">x</a>
+        <div class="container">
+            <div class="iconoMD"><i class="fa-solid fa-robot fa-3x"></i></div>
+            <p id="font-size">Contraseña o Usuario incorrectos</p>
+            <div class="botonRegistro"><a href="./pages/register.html" class="registerLinkMD">¿No estas registrado? <br> click aquí </a></div>
+        </div>
+    </dialog>
+
+	<script src="./js/login.js"></script>
+</body>
 </html>

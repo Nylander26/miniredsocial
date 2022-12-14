@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&family=Source+Sans+Pro&display=swap');
+
+:root {
+    --color-primario: rgba(205, 21, 21, 0.29);
+    --color-secundario: rgba(237, 234, 234, 0.54);
+    --color-boton-principal: #FFBD59;
+}
+
+.preview img {
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+
+body {
+    background-color: var(--color-primario);
+}
+
+/*Cajas principales y secundarias*/
+.boxFirst {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.boxInput {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/*Personalizacion*/
+
+.imgSZ {
+    width: 350px;
+    /*Imagen(LOGO) principal*/
+}
+
+
+/*Modificacion de los inputos de registro*/
+input[type="text" i] {
+    width: 250px;
+    height: 35px;
+    border: none;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+input[type="password" i] {
+    width: 250px;
+    height: 35px;
+    border: none;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+input[type="email" i] {
+    width: 250px;
+    height: 35px;
+    border: none;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+button {
+    width: 250px;
+    height: 37px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--color-boton-principal);
+    color: white;
+    font-family: Roboto;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+input[type="date" i] {
+    font-family: lobster;
+    width: 253px;
+    height: 35px;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    margin-bottom: 25px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: transparent;
+    background: 0 0;
+    margin: 0;
+    opacity: 0;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+input[type="file" i] {
+    margin-bottom: 20px;
+}
+
+.registerLink {
+    margin-top: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-family: Roboto;
+}
+
+.botonRegistro {
+    margin-top: 15px;
+    text-align: center;
+    width: 250px;
+    height: 45px;
+    background-color: #5CE1E6;
+    border-radius: 10px;
+    font-size: 16px;
+}
+#image{
+    display: none;
+}
+.formFile {
+    background-color: var(--color-secundario);
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    border-radius: 15px;
+    width: 163px;
+    height: 150px;
+    cursor: pointer;
+    flex-direction: column;
+    border: 1px solid #000;
+}
+/*Animacion logo-1*/
+.animacionLogo {
+    -webkit-animation: animacionLogo 15s linear both;
+    animation: animacionLogo 15s linear both;
+    animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes animacionLogo {
+    0% {
+        -webkit-transform: rotate3d(1, 1, 0, 0deg);
+        transform: rotate3d(1, 1, 0, 0deg);
+    }
+
+    50% {
+        -webkit-transform: rotate3d(1, 1, 0, -180deg);
+        transform: rotate3d(1, 1, 0, -180deg);
+    }
+
+    100% {
+        -webkit-transform: rotate3d(1, 1, 0, -360deg);
+        transform: rotate3d(1, 1, 0, -360deg);
+    }
+}
+
+@keyframes animacionLogo {
+    0% {
+        -webkit-transform: rotate3d(1, 1, 0, 0deg);
+        transform: rotate3d(1, 1, 0, 0deg);
+    }
+
+    50% {
+        -webkit-transform: rotate3d(1, 1, 0, -180deg);
+        transform: rotate3d(1, 1, 0, -180deg);
+    }
+
+    100% {
+        -webkit-transform: rotate3d(1, 1, 0, -360deg);
+        transform: rotate3d(1, 1, 0, -360deg);
+    }
+}
+
+
+/*Media queries*/
+
+@media screen and (max-width: 1025px) {
+    .boxFirst {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .boxInput {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .formFile{
+        border: none;
+    }
+
+    input[type="date" i] {
+        border: none;
+    }
+
+    p {
+        display: none;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    
+}
+
+@media screen and (min-width:1025px) {
+    .boxFirst {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 450px;
+        height: 685px;
+        background-color: white;
+        border-radius: 15px;
+    }
+
+    .boxInput {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .boxIMG {
+        display: flex;
+        flex-direction: column;
+        align-items: center
+    }
+
+    .botonRegistro {
+        margin-top: 15px;
+        text-align: center;
+        width: 250px;
+        height: 37px;
+        background-color: #5CE1E6;
+        border-radius: 10px;
+        font-size: 16px;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        min-height: 100vh;
+        overflow: hidden;
+    }
+
+    form {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+
+    p {
+        display: block;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 28px;
+        font-weight: normal;
+        line-height: 32px;
+        width: 550px;
+    }
+
+    input[type="text" i] {
+        border: black 2px solid;
+
+    }
+
+    input[type="password" i] {
+        border: black 2px solid;
+    }
+
+    input[type="email" i] {
+        border: black 2px solid;
+    }
+
+    input[type="date" i] {
+        border: black 2px solid;
+    }
+}

@@ -2,6 +2,7 @@
 
 :root {
     --color-primario: rgba(205, 21, 21, 0.29);
+    --color-secundario: rgba(237, 234, 234, 0.89);
     --color-boton-principal: #FFBD59;
 }
 
@@ -23,7 +24,6 @@ body {
     align-items: center;
 }
 
-
 /*Personalizacion*/
 
 .imgSZ {
@@ -31,19 +31,31 @@ body {
     /*Imagen(LOGO) principal*/
 }
 
+/*Link de pagina registrate*/
 
-/*Modificacion de los inputos de registro*/
-input[type="text" i] {
-    width: 250px;
-    height: 35px;
-    border: none;
-    border-radius: 15px;
-    margin-bottom: 20px;
+.registerLink {
+    margin-top: 20px;
     text-align: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-family: roboto;
+}
+/*Boton de Registro*/
+.botonRegistro {
+    margin-top: 15px;
+    text-align: center;
+    width: 250px;
+    height: 45px;
+    background-color: #5CE1E6;
+    border-radius: 10px;
+    font-size: 16px;
 }
 
+/*Modificacion de los inputos de registro*/
+
 input[type="password" i] {
-    width: 250px;
+    width: 350px;
     height: 35px;
     border: none;
     border-radius: 15px;
@@ -52,7 +64,7 @@ input[type="password" i] {
 }
 
 input[type="email" i] {
-    width: 250px;
+    width: 350px;
     height: 35px;
     border: none;
     border-radius: 15px;
@@ -63,52 +75,111 @@ input[type="email" i] {
 
 button {
     width: 250px;
-    height: 37px;
+    height: 35px;
     border-radius: 10px;
     border: none;
     background-color: var(--color-boton-principal);
     color: white;
-    font-family: Roboto;
+    font-family: roboto;
     font-size: 16px;
     cursor: pointer;
 }
 
-input[type="date" i] {
-    font-family: lobster;
-    width: 253px;
-    height: 35px;
-    border-radius: 15px;
+.claseX{
+    float: right;
+    width: 8%;
+    height: 8%;
+    border-radius: 50%;
+    text-decoration: none;
     text-align: center;
-    position: relative;
-    margin-bottom: 25px;
+    background-color: var(--color-boton-principal);
 }
 
-input[type="date"]::-webkit-calendar-picker-indicator {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: transparent;
-    background: 0 0;
-    margin: 0;
-    opacity: 0;
-    pointer-events: auto;
-    cursor: pointer;
+.container-MD {
+    width: 350px;
+    height: 350px;
+    border-radius: 25px;
+    border: none;
+    background-color: var(--color-secundario);
 }
 
-input[type="file" i] {
-    margin-bottom: 20px;
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
-.registerLink {
+/*Animacion de Modal y Edicion*/
+.registerLinkMD {
     margin-top: 20px;
     text-align: center;
     text-decoration: none;
     color: white;
-    font-family: Roboto;
+    font-weight: bold;
+    font-family: roboto;
 }
 
+.iconoMD {
+    border-radius: 50%;
+    background: var(--color-primario);
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    animation-duration: 5s;
+    animation-name: twinkle;
+    animation-iteration-count: infinite;
+}
+
+@keyframes twinkle {
+    20% {
+        transform: scale(0.5);
+        opacity: 0.5;
+    }
+}
+
+
+.animacionLogo {
+    -webkit-animation: animacionLogo 15s linear both;
+    animation: animacionLogo 15s linear both;
+    animation-iteration-count: infinite;
+}
+/*Animacion logo-1*/
+@-webkit-keyframes animacionLogo {
+    0% {
+        -webkit-transform: rotate3d(1, 1, 0, 0deg);
+        transform: rotate3d(1, 1, 0, 0deg);
+    }
+
+    50% {
+        -webkit-transform: rotate3d(1, 1, 0, -180deg);
+        transform: rotate3d(1, 1, 0, -180deg);
+    }
+
+    100% {
+        -webkit-transform: rotate3d(1, 1, 0, -360deg);
+        transform: rotate3d(1, 1, 0, -360deg);
+    }
+}
+
+@keyframes animacionLogo {
+    0% {
+        -webkit-transform: rotate3d(1, 1, 0, 0deg);
+        transform: rotate3d(1, 1, 0, 0deg);
+    }
+
+    50% {
+        -webkit-transform: rotate3d(1, 1, 0, -180deg);
+        transform: rotate3d(1, 1, 0, -180deg);
+    }
+
+    100% {
+        -webkit-transform: rotate3d(1, 1, 0, -360deg);
+        transform: rotate3d(1, 1, 0, -360deg);
+    }
+}
 
 /*Media queries*/
 
@@ -125,11 +196,7 @@ input[type="file" i] {
         align-items: center;
     }
 
-    input[type="date" i] {
-        border: none;
-    }
-
-    p {
+    .Titulo {
         display: none;
     }
 
@@ -147,7 +214,7 @@ input[type="file" i] {
         flex-direction: column;
         align-items: center;
         width: 450px;
-        height: 550px;
+        height: 450px;
         background-color: white;
         border-radius: 15px;
     }
@@ -164,16 +231,6 @@ input[type="file" i] {
         align-items: center
     }
 
-    .botonRegistro {
-        margin-top: 15px;
-        text-align: center;
-        width: 250px;
-        height: 37px;
-        background-color: #5CE1E6;
-        border-radius: 10px;
-        font-size: 16px;
-    }
-
     body {
         display: flex;
         justify-content: center;
@@ -181,24 +238,30 @@ input[type="file" i] {
         overflow: hidden;
     }
 
+    .botonRegistro {
+        margin-top: 15px;
+        text-align: center;
+        width: 250px;
+        height: 45px;
+        background-color: #5CE1E6;
+        border-radius: 10px;
+        font-size: 16px;
+    }
+
     form {
         display: flex;
         align-items: center;
-        gap: 30px;
     }
 
-    p {
+    .Titulo {
         display: block;
         font-family: 'Source Sans Pro', sans-serif;
         font-size: 28px;
         font-weight: normal;
         line-height: 32px;
         width: 550px;
-    }
-
-    input[type="text" i] {
-        border: black 2px solid;
-
+        padding: 20px;
+        margin-top: -55px;
     }
 
     input[type="password" i] {
@@ -209,7 +272,4 @@ input[type="file" i] {
         border: black 2px solid;
     }
 
-    input[type="date" i] {
-        border: black 2px solid;
-    }
 }
